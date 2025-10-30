@@ -40,7 +40,6 @@ This step isolates the region containing the core signal feature (the Z-shaped p
 * **Select Subset:** Select a subset of the normalized data that encompasses the entire Z-shaped signal portion. Based on the current data setup, the range between **index 4000 and 7000** is typically effective.
 * **Find Extrema:** Find the index positions of the **maximum and minimum** $\text{normalized\_ca}$ values within this selected range.
 * **Extract Data:** Extract the data between these extrema to create a temporary DataFrame.
-    * *Temporary Data Size:* $350~\text{rows} \times 2~\text{columns}$.
 ---
 
 ### **5. Linear Fit to Extract Transformation Parameters**
