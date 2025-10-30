@@ -20,7 +20,7 @@ The initial step involves loading the raw data and assigning column names.
 
 The raw signals are normalized using baseline averages.
 
-* **Calculate Means:** Determine the mean value for each signal ($\text{ca}$ and $\text{oa}$) using the **first and last 500 rows**.
+* **Calculate Means:** Determine the mean value for each signal ($\text{ca}$ and $\text{oa}$) using the **first and last 300 values** (change with your data preferences).
 * **Normalize Signals:** Normalize the $\text{ca}$ and $\text{oa}$ signals using these calculated means.
 * **Filter Data:** Filter out any rows where normalized values are zero (if any).
     * *Normalized Data Size:* $12000~\text{rows} \times 4~\text{columns}$.
@@ -29,19 +29,18 @@ The raw signals are normalized using baseline averages.
 
 ### **3. Visualize Original and Normalized Data**
 
-Plots are generated to visually inspect the raw and normalized data, confirming the normalization effect.
+Plots are generated to visually inspect the raw and normalized data, confirming the effectiveness of the normalization.
 
 ---
 
 ### **4. Identify Region of Interest (ROI)**
 
-This step isolates the region containing the core signal feature.
+This step isolates the region containing the core signal feature (the Z-shaped portion) for precise analysis.
 
-* **Select Subset:** Select a subset of the normalized data between **index 4000 and 7000**.
-* **Find Extrema:** Find the index positions of the **maximum and minimum** values in this range.
+* **Select Subset:** Select a subset of the normalized data that encompasses the entire Z-shaped signal portion. Based on the current data setup, the range between **index 4000 and 7000** is typically effective.
+* **Find Extrema:** Find the index positions of the **maximum and minimum** $\text{normalized\_ca}$ values within this selected range.
 * **Extract Data:** Extract the data between these extrema to create a temporary DataFrame.
     * *Temporary Data Size:* $350~\text{rows} \times 2~\text{columns}$.
-
 ---
 
 ### **5. Linear Fit to Extract Transformation Parameters**
