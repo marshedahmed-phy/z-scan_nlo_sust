@@ -8,8 +8,10 @@ This document outlines the **9-step preprocessing algorithm** applied to the raw
 
 The initial step involves loading the raw data and assigning column names.
 
+The initial step involves loading the raw data and assigning column names.
+
 * **Load Data:** Read the CSV file without headers.
-* **Assign Columns:** Assign the column names **ca** and **oa**.
+* **Assign Columns:** Assign the column names **ca** to the first column and **oa** the second column.
     * *Initial Data Size:* $12000~\text{rows} \times 2~\text{columns}$.
 
 ---
